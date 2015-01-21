@@ -437,6 +437,8 @@ public class HtmlSpanner {
 
         registerHandler("font", new FontHandler() );
 
+        registerHandler("table", new TableHandler());
+
     }
 
     public static interface CancellationCallback {
