@@ -1,0 +1,21 @@
+bin/
+gen/
+build/
+output/
+out/
+classes/
+
+.gradle/
+.gradle_export/
+.hidden/
+.export/
+
+local.properties
+
+#idea files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+.DS_Store
