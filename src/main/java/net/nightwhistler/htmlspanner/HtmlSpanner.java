@@ -433,12 +433,8 @@ public class HtmlSpanner {
         registerHandler("li", new ListItemHandler());
 
         registerHandler("a", new LinkHandler());
-        registerHandler("img", new ImageHandler());
 
         registerHandler("font", new FontHandler() );
-
-        registerHandler("table", new TableHandler());
-
     }
 
     public static interface CancellationCallback {
