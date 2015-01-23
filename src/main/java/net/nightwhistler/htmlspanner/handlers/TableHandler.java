@@ -111,7 +111,7 @@ public class TableHandler extends TagNodeHandler {
 
             TagNode tagNode = (TagNode) node;
 
-            if (tagNode.getName().equals("td")) {
+            if (tagNode.getName().equals("td") || tagNode.getName().equals("th")) {
                 Spanned result = this.getSpanner().fromTagNode(tagNode, null);
                 table.addCell(result);
                 return;
