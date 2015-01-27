@@ -111,7 +111,7 @@ public class TableHandler extends TagNodeHandler {
 
             TagNode tagNode = (TagNode) node;
 
-            if (tagNode.getName().equals("td")) {
+            if (tagNode.getName().equals("td") || tagNode.getName().equals("th")) {
                 Spanned result = this.getSpanner().fromTagNode(tagNode, null);
                 table.addCell(result);
                 return;
@@ -261,8 +261,10 @@ public class TableHandler extends TagNodeHandler {
                 if ( paintBorder ) {
 				    // The rect is open at the bottom, so there's a single line
 				    // between rows.
-				    canvas.drawRect(offset, 0, offset + columnWidth, rowHeight,
-						paint);
+                    Paint.FontMetrics fontMetrics = getTextPaint().getFontMetrics();
+                    canvas.drawRect(offset, 0, offset + columnWidth,
+                            rowHeight + fontMetrics.descent - fontMetrics.ascent + fontMetrics.leading,
+                            paint);
                 }
 
 				StaticLayout layout = new StaticLayout(tableRow.get(i),
