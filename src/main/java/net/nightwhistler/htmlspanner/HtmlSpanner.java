@@ -28,7 +28,6 @@ import net.nightwhistler.htmlspanner.handlers.*;
 import net.nightwhistler.htmlspanner.handlers.attributes.AlignmentAttributeHandler;
 
 import net.nightwhistler.htmlspanner.handlers.attributes.BorderAttributeHandler;
-import net.nightwhistler.htmlspanner.handlers.attributes.StyleAttributeHandler;
 import net.nightwhistler.htmlspanner.style.Style;
 import net.nightwhistler.htmlspanner.handlers.StyledTextHandler;
 import net.nightwhistler.htmlspanner.style.StyleValue;
@@ -347,7 +346,7 @@ public class HtmlSpanner {
 
 
     private static StyledTextHandler wrap( StyledTextHandler handler ) {
-        return new StyleAttributeHandler(new AlignmentAttributeHandler(handler));
+        return new AlignmentAttributeHandler(handler);
     }
 
     private void registerBuiltInHandlers() {
@@ -378,7 +377,6 @@ public class HtmlSpanner {
         registerHandler("tt", monSpaceHandler);
         registerHandler("code", monSpaceHandler);
 
-        registerHandler("style", new StyleNodeHandler() );
 
         //We wrap an alignment-handler to support
         //align attributes
@@ -434,7 +432,6 @@ public class HtmlSpanner {
 
         registerHandler("a", new LinkHandler());
 
-        registerHandler("font", new FontHandler() );
     }
 
     public static interface CancellationCallback {

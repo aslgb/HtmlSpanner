@@ -10,14 +10,10 @@ apply plugin: 'com.android.library'
 
 repositories {
     mavenCentral()
-    maven {
-        url "http://repo.pageturner-reader.org"
-    }
 }
 
 dependencies {
     compile 'net.sourceforge.htmlcleaner:htmlcleaner:2.2'
-    compile 'com.osbcp.cssparser:cssparser:1.5'
 }
 
 android {
